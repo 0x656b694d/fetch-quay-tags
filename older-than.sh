@@ -14,4 +14,4 @@ fi
 
 UNIX_DATE=$(date --date="$DATE" "+%s")
 
-jq ".tags[] | select(.start_ts < $UNIX_DATE) | .name"
+jq ".tags[] | select(.start_ts < $UNIX_DATE and .end_ts == null) | .name"
