@@ -34,5 +34,3 @@ $ cat repo-image.*.json | ./older-than.sh 2 months ago
 * When a tag is reset to another image, the old tag gets an expiration date set to the start date of the new tag;
 * The `onlyActiveTags` query parameter would hide the expired tags.
 
-### Note on Quay image lifetime
-* Even though the expiration date has well passed, the image is still pullable, despite Quay documentation saying there's only 14 days grace period.
