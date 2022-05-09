@@ -1,8 +1,8 @@
 # fetch-quay-tags
-Scripts to fetch image tags from `Quay.io` and filter them by date.
+Scripts to fetch image tags from `Quay.io`, filter them by date and delete.
 
 Use [fetch-tags.sh](fetch-tags.sh) to get the json documents (per page) for the given repository/image, then [older-than.sh](older-than.sh)
-to find the tags older than the given date.
+to find the tags older than the given date and finally [delete-tags.sh](delete-tags.sh) to delete them.
 
 # Example
 ```
@@ -10,9 +10,9 @@ $ ./fetch-tags.sh repo/image $QUAY_BEARER_TOKEN
 Fetching page 1
 Fetching page 2
 Done for repo/image on page 2
-$ cat repo-image.*.json | ./older-than.sh 2 months ago
-"v24"
-"v25"
+$ cat repo-image.*.json | ./older-than.sh 2 months ago | xargs ./delete-tags repo/image $QUAY_BEARER_TOKEN
+Deleting repo/image:v24
+Deleting repo/image:v25
 ```
 
 ## Tag info example
