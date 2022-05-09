@@ -7,7 +7,7 @@ set -eu
 
 if [ -z "$IMAGE" -o -z "$TOKEN" ]
 then
-    echo -e "Usage:\n\tfetch_tags.sh REPO/IMAGE BEARER_TOKEN"
+    echo -e "Usage:\n\tfetch-tags.sh REPO/IMAGE BEARER_TOKEN"
     exit 1
 fi
 
